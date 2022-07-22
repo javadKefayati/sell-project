@@ -1,0 +1,25 @@
+{% extends '../registration/baseLog.html' %}
+{% load static %} 
+{% load widget_tweaks %}
+
+
+{% block title %}log in {% endblock title %}
+
+{% block form %}
+<form  class="container w-50 p-5 form" method="post">
+  {% csrf_token %}
+      <h1 class="title">Log In</h1>
+  <div class="form-group" >
+    <label for="user" class="label mb-0">User Name:</label>
+    {{form.username|add_class:" form-control" }}
+    {% comment %} <input type="input" class="form-control" id="user"> {% endcomment %}
+  </div>
+  <div class="form-group">
+    <label for="pass" class="label mb-0">Password:</label>
+    {{form.password|add_class:" form-control  " }}
+  </div>
+  <button type="submit" class="btn btn-success w-50">Submit</button>
+  <a href="../registeraccount"><button type="button" class="btn btn-danger ">create new account</button></a>
+</form>
+
+{% endblock form %}

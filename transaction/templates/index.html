@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}home{% endblock title %}
+{% block home %}""{% endblock home %}
+{% block increase %}
+<a class="bg-warning text-danger logout" href="../increase/">  +increase</a>
+{% endblock increase %}
+
+{% block form %}
+{{ user.id|json_script:"user_id" }}
+  <script>
+    const id_user = JSON.parse(document.getElementById('user_id').textContent);
+  </script>
+  
+<form class="container" >
+  {% csrf_token %}
+  
+  <div class="form-group" >
+    <label for="number">Phone Number:</label>
+    {{form.number|add_class:" form-control" }}
+    <small>start with 09 and must be 11 numbers</small>
+  </div>
+  <div class="form-group">
+    <label for="price">Price(Doller):</label>
+    {{form.price|add_class:" form-control"}}
+  </div>
+  <button type="button" class="btn btn-default" name="id"  onclick="order(id_user,'id_price','id_number')"  >Submit</button>
+</form>
+
+{% endblock form %}
+

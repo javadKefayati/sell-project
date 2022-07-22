@@ -1,0 +1,76 @@
+@font-face {
+      font-family: Camelina;
+      src: url("../font/Camelina.otf" );
+      font-weight: bold;  
+}
+@font-face {
+      font-family: shandoraDemo;
+      src: url("../font/Shandora DEMO.ttf" )
+
+}
+@font-face {
+      font-family: shandoraItalicDemo;
+      src: url("../font/Shandora Italic DEMO.ttf" )
+
+}
+
+
+body{
+      background-color:#001B2E;
+}
+
+.logout{
+      color:white;
+      padding:5px;
+      border-radius: 6px;
+      font-family: serif;
+      font-size: 22px ;
+}
+
+
+.header{
+      margin-top: 20px;
+      color:#FFC49B;
+      background-color:#294C60;
+      height:250px;
+}
+.header h1{
+      font-family:Camelina;
+      text-align:center;
+      font-size:100px;
+      padding-top:25px
+}
+/* .header  p a{
+      background-color  :yellow;
+} */
+.header p{
+      font-family: unset;
+      padding-left: 20px;
+      font-size: 20px;
+
+}
+.main{
+      background-color:#ADB6C4;
+      height:680px;
+}
+
+form{
+      padding-top: 90px;
+      width:500px !important;
+}
+form label{
+      width:130px;
+      border-radius: 0 10px 0 0;
+      background-color:#001B2E;
+      color:white;
+      padding: 4px;
+      margin-bottom:0;
+}
+form button{
+      background-color:#001B2E;
+      color:white;
+}
+form button:hover{
+      background-color:#294C60;
+      color:white;
+}

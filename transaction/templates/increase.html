@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %} 
+{% block title %}increase{% endblock title %}
+{% block home %}"../home"{% endblock home %}
+
+{% block form %}
+{{ user.id|json_script:"user_id" }}
+  <script>
+    const id_user = JSON.parse(document.getElementById('user_id').textContent);
+  </script>
+<form action="../increase/register/" method="POST" class="container" >
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="price">Price:</label>
+    {{form.price|add_class:" form-control"}}
+  </div>
+  <button type="button" class="btn btn-default" name="id"  onclick="increase(id_user,'id_price','id_number')"  >Submit</button>
+</form>
+
+{% endblock form %}
+
